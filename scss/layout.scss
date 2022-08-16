@@ -1,0 +1,156 @@
+@charset "utf-8";
+
+/*設定*/
+@mixin pc {
+  @media screen and (min-width: 1101px) {
+    @content;
+  }
+}
+@mixin sp {
+  @media screen and (max-width: 1100px) {
+   @content;
+  }
+}
+
+$viewport: 1100;
+@function pxVw($px) {
+	@return (($px / $viewport) * 100) + vw;
+}
+
+/* 余白 */
+$common-margin-list: 10, 20, 40, 60;
+@each $common-margin in $common-margin-list {
+  .mt#{$common-margin} {
+    @include pc {
+      margin-top: #{$common-margin}px;
+    }
+    @include sp {
+      margin-top: pxVw($common-margin);
+    }
+  }
+  .mb#{$common-margin} {
+    @include pc {
+      margin-bottom: #{$common-margin}px;
+    }
+    @include sp {
+      margin-bottom: pxVw($common-margin);
+    }
+  }
+  .pt#{$common-margin} {
+    @include pc {
+      padding-top: #{$common-margin}px;
+    }
+    @include sp {
+      padding-top: pxVw($common-margin);
+    }
+  }
+  .pb#{$common-margin} {
+    @include pc {
+      padding-bottom: #{$common-margin}px;
+    }
+    @include sp {
+      padding-bottom: pxVw($common-margin);
+    }
+  }
+}
+
+/*layout*/
+body{
+  font-family: YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #5f759b;
+  background-color: #f1f1f1;
+  line-height: 1.6;
+  font-feature-settings: "palt" 1;
+  overflow-x: hidden;
+  @include sp {
+    font-size: 16px;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 750px;
+  margin-left: auto;
+  margin-right: auto;
+  @include sp {
+    padding: 0 pxVw(40);
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+.flex_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  .flex_item {
+    @include pc {
+      margin-bottom: 40px;
+      margin-right: 0;
+      width: 100%;
+    }
+    @include sp {
+      margin-bottom: pxVw(20);
+      margin-right: 0;
+      width: 100%;
+    }
+    &.is-empty {
+      height: 0;
+      padding-top: 0;
+      padding-bottom: 0;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+  }
+  $flex-margin: (
+    2: (
+      pc: 40px,
+      sp: pxVw(20)
+    ),
+    3: (
+      pc: 26px,
+      sp: pxVw(13)
+    ),
+    4: (
+      pc: 20px,
+      sp: pxVw(10)
+    ),
+    5: (
+      pc: 16px,
+      sp: pxVw(8)
+    )
+  );
+  @each $col_num, $margin_size in $flex-margin {
+    &.col#{$col_num} {
+      &-pc {
+        @include pc {
+          .flex_item {
+            margin-bottom: map-get($margin_size, pc);
+            margin-right: map-get($margin_size, pc);
+            width: calc(100% / #{$col_num} - calc(#{map-get($margin_size, pc)} - #{map-get($margin_size, pc)} / #{$col_num}));
+            &:nth-child(#{$col_num}n) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+      &-sp {
+        @include sp {
+          .flex_item {
+            margin-bottom: map-get($margin_size, sp);
+            margin-right: map-get($margin_size, sp);
+            width: calc(100% / #{$col_num} - calc(#{map-get($margin_size, sp)} - #{map-get($margin_size, sp)} / #{$col_num}));
+            &:nth-child(#{$col_num}n) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

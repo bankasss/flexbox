@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flexBox</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+  <main>
+    <div class="container mt40">
+      <h1 class="mb40">flexボックス</h1>
+      <ul class="mb40">
+        <li>・最小1列、最大5列とする</li>
+        <li>・左寄せと中央寄せどちらも選べるようにする(PC/SP共通)</li>
+        <li>・flex_boxの横幅はどの列数でも変わらないようにする</li>
+        <li>・SPとPCで列数を変えられるようにする</li>
+        <li>・marginの大きさは列数によって可変させる</li>
+      </ul>
+
+      <h2 class="mb40">PC5列・SP2列・左寄せ</h2>
+      <div class="flex_box col5-pc col2-sp align-left mb60">
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム1</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム2</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム3</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム4</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム5</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム6</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム7</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb40">PC2列・SP1列・中央寄せ</h2>
+      <div class="flex_box col2-pc mb60">
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム1</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム2</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム3</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム4</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム5</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム6</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム7</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム8</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb40">PC3列・SP3列・中央寄せ</h2>
+      <div class="flex_box col3-pc col3-sp mb60">
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム1</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム2</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム3</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム4</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム5</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム6</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム7</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム8</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="mb40">PC4列・SP2列・左寄せ</h2>
+      <div class="flex_box col4-pc col2-sp align-left">
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム1</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム2</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム3</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム4</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム5</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム6</p>
+          </div>
+        </div>
+        <div class="flex_item">
+          <div class="flex_item_content">
+            <img src="images/img.png" alt="">
+            <p class="mt10 mb10">アイテム7</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+</body>
+</html>
